@@ -39,8 +39,36 @@ if (number <= 2) {
 
 //Nota: usar confirm() https://www.w3schools.com/jsref/met_win_confirm.asp
 
+let resultado = "";
+
+do {
+    const cadena = prompt("Introduce una cadena");
+
+    if (resultado == "") {
+        resultado = resultado + cadena;
+    } else {
+        resultado = resultado + "-" + cadena;
+    }
+} while (confirm("Desea seguir?"));
+document.write(resultado);
 
 //4- Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
+
+let suma = 0;
+let numero;
+do {
+    numero = prompt("Introduce un numero");
+    if (Number(numero) == numero) {
+        numero = Number(numero);
+        suma = suma + numero;
+    }
+    else {
+        if (numero != undefined) {
+            alert(numero + " No es un numero");
+        }
+    }
+} while (numero != undefined && confirm("Desea seguir?"));
+document.write(suma);
 
 //5- Realizar una página con un script que calcule el valor de la letra de un número de DNI (Documento nacional de identidad).
 
@@ -52,6 +80,90 @@ if (number <= 2) {
 //Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.
 //Deberá de repetirse el proceso hasta que el usuario pulse «cancelar».
 
+do{
+    const dni = Number(prompt('Ingrese un dni'));
+    if (dni <= 99999999 && dni >= 0) {
+        let division = dni % 23;
+        switch (division) {
+            case 0:
+                letra = "T"
+                break;
+            case 1:
+                letra = "R"
+                break;
+            case 2:
+                letra = "W"
+                break;
+            case 3:
+                letra = "A"
+                break;
+            case 4:
+                letra = "G"
+                break;
+            case 5:
+                letra = "M"
+                break;
+            case 6:
+                letra = "Y"
+                break;
+            case 7:
+                letra = "F"
+                break;
+            case 8:
+                letra = "P"
+                break;
+            case 9:
+                letra = "D"
+                break;
+            case 10:
+                letra = "X"
+                break;
+            case 11:
+                letra = "B"
+                break;
+            case 12:
+                letra = "N"
+                break;
+            case 13:
+                letra = "J"
+                break;
+            case 14:
+                letra = "Z"
+                break;
+            case 15:
+                letra = "S"
+                break;
+            case 16:
+                letra = "Q"
+                break;
+            case 17:
+                letra = "V"
+                break;
+            case 18:
+                letra = "H"
+                break;
+            case 19:
+                letra = "L"
+                break;
+            case 20:
+                letra = "C"
+                break;
+            case 21:
+                letra = "K"
+                break;
+            case 22:
+                letra = "E"
+                break;
+            default:
+                alert('Numero erroneo')
+                break;
+        }
+        alert("Numero: " + dni + ", Letra: " + letra);
+    }else {
+            alert("No es un numero");
+    
+    }
+}while(confirm("Desea seguir?"))
 
 /*6- Realiza un script que escriba una pirámide del 1 al 30 de la siguiente forma :
 1
@@ -118,3 +230,5 @@ Nota: ver funcion Math() https://www.w3schools.com/js/js_math.asp*/
 /*16- Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.
 
 /*17- Realiza un script que muestre la posición de la primera vocal de un texto introducido por teclado.*/
+
+
