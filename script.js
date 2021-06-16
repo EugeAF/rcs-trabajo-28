@@ -277,20 +277,123 @@ for (f = 1; f <= j; f++) {
 
 Ejercicios con Math*/
 
+let q, w;
+
+const filas = Number(prompt("Introduce numero de filas"));
+const colum = Number(prompt("Introduce numero de columnas"));
+let res = filas * colum;
+
+document.write("<table border>");
+
+for (q = 0; q < filas; q++) {
+    document.write("<tr>");
+    for (w = 0; w < colum; w++) {
+        document.write("<td>");
+        document.write(res);
+        res--;
+        document.write("</td>");
+    }
+    document.write("</tr>");
+}
+document.write("</table>");
+
 /*11- Realiza un script que pida por teclado 3 edades y 3 nombres e indique el nombre del mayor. *
 
 Nota: ver funcion Math() https://www.w3schools.com/js/js_math.asp*/
+
+const nombre1 = prompt("Nombre 1:");
+const edad1 = Number(prompt("Edad 1:"));
+
+const nombre2 = prompt("Nombre 2:");
+const edad2 = Number(prompt("Edad 2:"));
+
+const nombre3 = prompt("Nombre 3:");
+const edad3 = Number(prompt("Edad 3:"));
+
+let maximo = Math.max(edad1, edad2, edad3);
+
+if (maximo == edad1) {
+    document.write("El mayor es: " + nombre1);
+} else if (maximo == edad2) {
+    document.write("El mayor es: " + nombre2);
+} else if (maximo == edad3) {
+    document.write("El mayor es: " + nombre3);
+}
 
 /*12- Realiza un script que genere un número aleatorio entre 1 y 99
 
  Ejercicios con String*/
 
+let num = Math.floor((Math.random() * 99) + 1);
+document.write(num);
+
 //13- Realiza un script que pida un texto y lo muestre en mayúsculas.
+
+const texto = prompt("Introduce el texto");
+document.write("TEXTO: " + texto.toUpperCase + ".");
 
 /*14- Realiza un script que pida una cadena de texto y lo muestre poniendo el signo – entre cada carácter sin usar el método replace. Por ejemplo, si tecleo “hola qué tal”, deberá salir “h-o-l-a- -q-u-e- -t-a-l”.*/
 
-/*15- Realiza un script que cuente el número de vocales que tiene un texto.
+let cadena = prompt("Introduce una cadena de texto:");
+let numchar = cadena.length;
+let caracter;
+let e;
+for (e = 0; e < numchar; e++) {
+    caracter = cadena.charAt(e);
+    if (i == numchar - 1) {
+        document.write(caracter);
+    }
+    else {
+        document.write(caracter + "-");
+    }
+}
 
-/*16- Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.
+/*15- Realiza un script que cuente el número de vocales que tiene un texto.*/
+
+const cadenas = prompt("Introduce una cadena de texto:");
+let numchars = cadenas.length;
+cadenas = cadenas.toUpperCase();
+let car;
+let contador = 0;
+let r;
+for (r = 0; r < numchars; r++) {
+    car = cadenas.charAt(r);
+    if ((car == "A") || (car == "E") || (car == "I") || (car == "O") || (car == "U")) {
+        contador++;
+    }
+}
+document.write("Número de Vocales: " + contador + ".");
+
+/*16- Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.*/
+
+let cadenaes = prompt("Introduce un Texto:");
+let numchares = cadenaes.length;
+let t;
+let cars;
+let salidas = "";
+for (t = 0; t < numchares; t++) {
+    cars = cadenaes.charAt(t);
+    salidas = cars + salidas;
+}
+document.write(salidas);
 
 /*17- Realiza un script que muestre la posición de la primera vocal de un texto introducido por teclado.*/
+
+let vocales = ["a", "e", "i", "o", "u"];
+let textos = prompt("Introduce un texto");
+let textomin = textos.toLowerCase();
+let posicion = 0;
+let parar = false;
+for (let t = 0; t < textomin.length; t++) {
+    for (let u = 0; u < vocales.length; u++) {
+        if (vocales[u] == textomin.charAt(t)) {
+            posicion = t;
+            parar = true;
+            break;
+        }
+    }
+    if (parar) {
+        break;
+    }
+}
+document.write("La primera vocal está en la posición " + posicion);
