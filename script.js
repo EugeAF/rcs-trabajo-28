@@ -80,7 +80,7 @@ document.write(suma);
 //Si lo introducido no es un número deberá indicarse con un alert y volver a preguntar.
 //Deberá de repetirse el proceso hasta que el usuario pulse «cancelar».
 
-do{
+do {
     const dni = Number(prompt('Ingrese un dni'));
     if (dni <= 99999999 && dni >= 0) {
         let division = dni % 23;
@@ -159,11 +159,11 @@ do{
                 break;
         }
         alert("Numero: " + dni + ", Letra: " + letra);
-    }else {
-            alert("No es un numero");
-    
+    } else {
+        alert("No es un numero");
+
     }
-}while(confirm("Desea seguir?"))
+} while (confirm("Desea seguir?"))
 
 /*6- Realiza un script que escriba una pirámide del 1 al 30 de la siguiente forma :
 1
@@ -173,6 +173,13 @@ do{
 55555
 666666
 …….*/
+
+for (let i = 1; i <= 30; i++) {
+    for (let repeticion = 0; repeticion < i; repeticion++) {
+        document.write(i);
+    }
+    document.write("<br>");
+}
 
 /*7- Haz un script que escriba una pirámide inversa de los números del 1 al número que indique el usuario (no mayor de 50)  de la siguiente forma : (suponiendo que indica 30).
 
@@ -184,6 +191,25 @@ do{
 22
 1*/
 
+const numrep = prompt("Introduce numero de repeticiones");
+if (Number(numrep) == numrep) {
+    if (numrep > 0 && numrep <= 50) {
+        let rep, i;
+        for (i = numrep; i >= 1; i--) {
+            for (rep = i; rep >= 1; rep--) {
+                document.write(i);
+            }
+            document.write("<br>");
+        }
+    }
+    else {
+        alert("El número introducido no es válido");
+    }
+}
+else {
+    alert("No has introducido un número");
+}
+
 /*8- Crea script para generar pirámide siguiente con los números del 1 al número que indique el usuario (no mayor de 50)
 
 1
@@ -193,6 +219,26 @@ do{
 12345
 123456
 ……*/
+
+let numberRep = prompt("Introduce numero de repeticion");
+let rep;
+let i;
+if (Number(numberRep) == numberRep) {
+    if (numberRep > 0 && numberRep <= 50) {
+        for (i = 0; i <= numberRep; i++) {
+            for (rep = 1; rep <= i; rep++) {
+                document.write(rep);
+            }
+            document.write("<br>");
+        }
+    }
+    else {
+        alert("El número introducido no es válido");
+    }
+}
+else {
+    alert("No has introducido un número");
+}
 
 /*9- Crea un script que escriba los números del 1 al 500, que indique cuáles son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal. Por ejemplo :
 
@@ -208,6 +254,24 @@ do{
 8 (Múltiplo de 4)
 9 (Múltiplo de 9)
 10*/
+
+let f;
+const j = 500;
+const repetition = 0;
+for (f = 1; f <= j; f++) {
+    document.write(f);
+    if (f % 4 == 0) {
+        document.write(" (Multiplo de 4)");
+    } else if (f % 9 == 0) {
+        document.write(" (Multiplo de 9)");
+    }
+    document.write("<br>");
+    if (f % 5 == 0) {
+        document.write("<hr>");
+    }
+}
+
+
 
 /*10- Realiza un script que pida número de filas y columnas y escriba una tabla. Dentro cada una de las celdas deberá escribirse un número consecutivo en orden descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 35 al 1.
 
@@ -230,5 +294,3 @@ Nota: ver funcion Math() https://www.w3schools.com/js/js_math.asp*/
 /*16- Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.
 
 /*17- Realiza un script que muestre la posición de la primera vocal de un texto introducido por teclado.*/
-
-
